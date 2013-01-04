@@ -1,0 +1,89 @@
+body {
+    background: #E5E5E5;
+    font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+    color: #333;
+    margin: 0 100px 100px 100px;
+    overflow-y: scroll;
+}
+
+h1, form {
+    margin: 30px 0 10px 0;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+input {
+    padding: 4px;
+}
+
+input#timepicker {
+    width: 45px;
+}
+
+input#countries {
+    width: 45px;
+}
+
+input#remote {
+    width: 250px;
+}
+
+ul.suggest {
+    font-size: 11px;
+    list-style: none;
+    display: none;
+    padding: 3px 0;
+    margin: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+ul.suggest li a {
+    display: block;
+    padding: 5px;
+    clear: both;
+    font-weight: normal;
+    line-height: 20px;
+    color: #333;
+}
+ul.suggest li a:hover,
+ul.suggest li a:focus,
+ul.suggest li.active a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #0081c2;
+    background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+}
+
+.throbber {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    margin: 0 0 0 2px;
+    padding: 0;
+    border: 2px solid;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-radius: 50%;
+    color: #397CE9;
+    -webkit-animation: load 0.9s linear infinite;
+    -moz-animation: load 0.9s linear infinite;
+    -o-animation: load 0.9s linear infinite;
+    animation: load 0.9s linear infinite;
+}
+@-webkit-keyframes load {
+    100% { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes load {
+    100% { -moz-transform: rotate(360deg); }
+}
+@-o-keyframes load {
+    100% { -o-transform: rotate(360deg); }
+}
+@keyframes load {
+    100% { transform: rotate(360deg); }
+}

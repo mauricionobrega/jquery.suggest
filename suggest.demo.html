@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Suggest Demo</title>
+        <link rel="stylesheet" href="suggest.demo.css" type="text/css">
+    </head>
+    <body>
+
+        <h1>jquery.suggest</h1>
+        <p>Simple cross browser <small>(and Mobile Safari compliant)</small> <a href="https://github.com/kemar/jquery.suggest">suggest jQuery plugin</a> <small>(a.k.a. typeahead a.k.a. autocomplete)</small> with a careful management of events and full keyboard access.</p>
+
+        <form class="nosubmit">
+            <h2>Time picker <small>(data-source array)</small></h2>
+            <input id="timepicker" placeholder="hh:mm" type="text" data-source="[&quot;00:00&quot;, &quot;00:05&quot;, &quot;00:10&quot;, &quot;00:15&quot;, &quot;00:20&quot;, &quot;00:25&quot;, &quot;00:30&quot;, &quot;00:35&quot;, &quot;00:40&quot;, &quot;00:45&quot;, &quot;00:50&quot;, &quot;00:55&quot;, &quot;01:00&quot;, &quot;01:05&quot;, &quot;01:10&quot;, &quot;01:15&quot;, &quot;01:20&quot;, &quot;01:25&quot;, &quot;01:30&quot;, &quot;01:35&quot;, &quot;01:40&quot;, &quot;01:45&quot;, &quot;01:50&quot;, &quot;01:55&quot;, &quot;02:00&quot;, &quot;02:05&quot;, &quot;02:10&quot;, &quot;02:15&quot;, &quot;02:20&quot;, &quot;02:25&quot;, &quot;02:30&quot;, &quot;02:35&quot;, &quot;02:40&quot;, &quot;02:45&quot;, &quot;02:50&quot;, &quot;02:55&quot;, &quot;03:00&quot;, &quot;03:05&quot;, &quot;03:10&quot;, &quot;03:15&quot;, &quot;03:20&quot;, &quot;03:25&quot;, &quot;03:30&quot;, &quot;03:35&quot;, &quot;03:40&quot;, &quot;03:45&quot;, &quot;03:50&quot;, &quot;03:55&quot;, &quot;04:00&quot;, &quot;04:05&quot;, &quot;04:10&quot;, &quot;04:15&quot;, &quot;04:20&quot;, &quot;04:25&quot;, &quot;04:30&quot;, &quot;04:35&quot;, &quot;04:40&quot;, &quot;04:45&quot;, &quot;04:50&quot;, &quot;04:55&quot;, &quot;05:00&quot;, &quot;05:05&quot;, &quot;05:10&quot;, &quot;05:15&quot;, &quot;05:20&quot;, &quot;05:25&quot;, &quot;05:30&quot;, &quot;05:35&quot;, &quot;05:40&quot;, &quot;05:45&quot;, &quot;05:50&quot;, &quot;05:55&quot;, &quot;06:00&quot;, &quot;06:05&quot;, &quot;06:10&quot;, &quot;06:15&quot;, &quot;06:20&quot;, &quot;06:25&quot;, &quot;06:30&quot;, &quot;06:35&quot;, &quot;06:40&quot;, &quot;06:45&quot;, &quot;06:50&quot;, &quot;06:55&quot;, &quot;07:00&quot;, &quot;07:05&quot;, &quot;07:10&quot;, &quot;07:15&quot;, &quot;07:20&quot;, &quot;07:25&quot;, &quot;07:30&quot;, &quot;07:35&quot;, &quot;07:40&quot;, &quot;07:45&quot;, &quot;07:50&quot;, &quot;07:55&quot;, &quot;08:00&quot;, &quot;08:05&quot;, &quot;08:10&quot;, &quot;08:15&quot;, &quot;08:20&quot;, &quot;08:25&quot;, &quot;08:30&quot;, &quot;08:35&quot;, &quot;08:40&quot;, &quot;08:45&quot;, &quot;08:50&quot;, &quot;08:55&quot;, &quot;09:00&quot;, &quot;09:05&quot;, &quot;09:10&quot;, &quot;09:15&quot;, &quot;09:20&quot;, &quot;09:25&quot;, &quot;09:30&quot;, &quot;09:35&quot;, &quot;09:40&quot;, &quot;09:45&quot;, &quot;09:50&quot;, &quot;09:55&quot;, &quot;10:00&quot;, &quot;10:05&quot;, &quot;10:10&quot;, &quot;10:15&quot;, &quot;10:20&quot;, &quot;10:25&quot;, &quot;10:30&quot;, &quot;10:35&quot;, &quot;10:40&quot;, &quot;10:45&quot;, &quot;10:50&quot;, &quot;10:55&quot;, &quot;11:00&quot;, &quot;11:05&quot;, &quot;11:10&quot;, &quot;11:15&quot;, &quot;11:20&quot;, &quot;11:25&quot;, &quot;11:30&quot;, &quot;11:35&quot;, &quot;11:40&quot;, &quot;11:45&quot;, &quot;11:50&quot;, &quot;11:55&quot;, &quot;12:00&quot;, &quot;12:05&quot;, &quot;12:10&quot;, &quot;12:15&quot;, &quot;12:20&quot;, &quot;12:25&quot;, &quot;12:30&quot;, &quot;12:35&quot;, &quot;12:40&quot;, &quot;12:45&quot;, &quot;12:50&quot;, &quot;12:55&quot;, &quot;13:00&quot;, &quot;13:05&quot;, &quot;13:10&quot;, &quot;13:15&quot;, &quot;13:20&quot;, &quot;13:25&quot;, &quot;13:30&quot;, &quot;13:35&quot;, &quot;13:40&quot;, &quot;13:45&quot;, &quot;13:50&quot;, &quot;13:55&quot;, &quot;14:00&quot;, &quot;14:05&quot;, &quot;14:10&quot;, &quot;14:15&quot;, &quot;14:20&quot;, &quot;14:25&quot;, &quot;14:30&quot;, &quot;14:35&quot;, &quot;14:40&quot;, &quot;14:45&quot;, &quot;14:50&quot;, &quot;14:55&quot;, &quot;15:00&quot;, &quot;15:05&quot;, &quot;15:10&quot;, &quot;15:15&quot;, &quot;15:20&quot;, &quot;15:25&quot;, &quot;15:30&quot;, &quot;15:35&quot;, &quot;15:40&quot;, &quot;15:45&quot;, &quot;15:50&quot;, &quot;15:55&quot;, &quot;16:00&quot;, &quot;16:05&quot;, &quot;16:10&quot;, &quot;16:15&quot;, &quot;16:20&quot;, &quot;16:25&quot;, &quot;16:30&quot;, &quot;16:35&quot;, &quot;16:40&quot;, &quot;16:45&quot;, &quot;16:50&quot;, &quot;16:55&quot;, &quot;17:00&quot;, &quot;17:05&quot;, &quot;17:10&quot;, &quot;17:15&quot;, &quot;17:20&quot;, &quot;17:25&quot;, &quot;17:30&quot;, &quot;17:35&quot;, &quot;17:40&quot;, &quot;17:45&quot;, &quot;17:50&quot;, &quot;17:55&quot;, &quot;18:00&quot;, &quot;18:05&quot;, &quot;18:10&quot;, &quot;18:15&quot;, &quot;18:20&quot;, &quot;18:25&quot;, &quot;18:30&quot;, &quot;18:35&quot;, &quot;18:40&quot;, &quot;18:45&quot;, &quot;18:50&quot;, &quot;18:55&quot;, &quot;19:00&quot;, &quot;19:05&quot;, &quot;19:10&quot;, &quot;19:15&quot;, &quot;19:20&quot;, &quot;19:25&quot;, &quot;19:30&quot;, &quot;19:35&quot;, &quot;19:40&quot;, &quot;19:45&quot;, &quot;19:50&quot;, &quot;19:55&quot;, &quot;20:00&quot;, &quot;20:05&quot;, &quot;20:10&quot;, &quot;20:15&quot;, &quot;20:20&quot;, &quot;20:25&quot;, &quot;20:30&quot;, &quot;20:35&quot;, &quot;20:40&quot;, &quot;20:45&quot;, &quot;20:50&quot;, &quot;20:55&quot;, &quot;21:00&quot;, &quot;21:05&quot;, &quot;21:10&quot;, &quot;21:15&quot;, &quot;21:20&quot;, &quot;21:25&quot;, &quot;21:30&quot;, &quot;21:35&quot;, &quot;21:40&quot;, &quot;21:45&quot;, &quot;21:50&quot;, &quot;21:55&quot;, &quot;22:00&quot;, &quot;22:05&quot;, &quot;22:10&quot;, &quot;22:15&quot;, &quot;22:20&quot;, &quot;22:25&quot;, &quot;22:30&quot;, &quot;22:35&quot;, &quot;22:40&quot;, &quot;22:45&quot;, &quot;22:50&quot;, &quot;22:55&quot;, &quot;23:00&quot;, &quot;23:05&quot;, &quot;23:10&quot;, &quot;23:15&quot;, &quot;23:20&quot;, &quot;23:25&quot;, &quot;23:30&quot;, &quot;23:35&quot;, &quot;23:40&quot;, &quot;23:45&quot;, &quot;23:50&quot;, &quot;23:55&quot;]" autocomplete="off">
+        </form>
+
+        <form class="nosubmit">
+            <h2>Fruits <small>(array)</small></h2>
+            <input id="fruits" placeholder="Fruits" type="text">
+        </form>
+
+        <form class="nosubmit">
+            <h2>Countries <small>(key-value array)</small></h2>
+            <input id="countries" placeholder="Country" type="text">
+        </form>
+
+        <form method="get" action="http://www.youtube.com/results" target="_blank">
+            <h2>YouTube search <small>(remote suggestqueries.google.com)</small></h2>
+            <input id="remote" name="search_query" placeholder="YouTube search" type="text">
+            <input type="submit" value="go">
+        </form>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="jquery.suggest.js"></script>
+        <script>
+        window.jQuery(function ($) {
+            "use strict";
+
+            $('form.nosubmit').submit(function () {
+                return false;
+            });
+
+            $('#timepicker').suggest({
+                limit: 12,
+                alterQuery: function (query) {
+                    var split_query = query.toLowerCase().split(':');
+                    if (split_query[0].length === 1) {
+                        split_query[0] = '0' + split_query[0];
+                    }
+                    return split_query.join(':');
+                }
+            });
+
+            $('#fruits').suggest({
+                source: [
+                    'Apple',
+                    'Apricot',
+                    'Avocado',
+                    'Banana',
+                    'Breadfruit',
+                    'Bilberry',
+                    'Blackberry',
+                    'Blackcurrant',
+                    'Blueberry',
+                    'Currant',
+                    'Cherry',
+                    'Cherimoya',
+                    'Clementine',
+                    'Coconut',
+                    'Date',
+                    'Damson',
+                    'Dragonfruit',
+                    'Durian',
+                    'Eggplant',
+                    'Elderberry',
+                    'Feijoa',
+                    'Fig',
+                    'Gooseberry',
+                    'Grape',
+                    'Grapefruit',
+                    'Guava',
+                    'Huckleberry',
+                    'Honeydew',
+                    'Jackfruit',
+                    'Jambul',
+                    'Kiwi fruit',
+                    'Kumquat',
+                    'Legume',
+                    'Lemon',
+                    'Lime',
+                    'Loquat',
+                    'Lychee',
+                    'Mandarine',
+                    'Mango',
+                    'Melon',
+                    'Nectarine',
+                    'Nut',
+                    'Orange',
+                    'Peach',
+                    'Pear',
+                    'Persimmon',
+                    'Physalis',
+                    'Plum/prune (dried plum)',
+                    'Pineapple',
+                    'Pomegranate',
+                    'Pomelo',
+                    'Purple Mangosteen',
+                    'Raspberry',
+                    'Rambutan',
+                    'Redcurrant',
+                    'Salal berry',
+                    'Satsuma',
+                    'Star fruit',
+                    'Strawberry',
+                    'Tangerine',
+                    'Tomato',
+                    'Ugli fruit',
+                    'Ziziphus mauritiana'
+                ]
+            });
+
+            $('#countries').suggest({
+                suggestions_menu_width: 'auto',
+                source: [
+                    { 'value': 'AF', 'label': 'Afghanistan' },
+                    { 'value': 'AL', 'label': 'Albania' },
+                    { 'value': 'DZ', 'label': 'Algeria' },
+                    { 'value': 'AS', 'label': 'American Samoa' },
+                    { 'value': 'AD', 'label': 'Andorra' },
+                    { 'value': 'AO', 'label': 'Angola' },
+                    { 'value': 'AI', 'label': 'Anguilla' },
+                    { 'value': 'AQ', 'label': 'Antarctica' },
+                    { 'value': 'AG', 'label': 'Antigua and Barbuda' },
+                    { 'value': 'AR', 'label': 'Argentina' },
+                    { 'value': 'AM', 'label': 'Armenia' },
+                    { 'value': 'AW', 'label': 'Aruba' },
+                    { 'value': 'AU', 'label': 'Australia' },
+                    { 'value': 'AT', 'label': 'Austria' },
+                    { 'value': 'AZ', 'label': 'Azerbaijan' },
+                    { 'value': 'BS', 'label': 'Bahamas' },
+                    { 'value': 'BH', 'label': 'Bahrain' },
+                    { 'value': 'BD', 'label': 'Bangladesh' },
+                    { 'value': 'BB', 'label': 'Barbados' },
+                    { 'value': 'BY', 'label': 'Belarus' },
+                    { 'value': 'BE', 'label': 'Belgium' },
+                    { 'value': 'BZ', 'label': 'Belize' },
+                    { 'value': 'BJ', 'label': 'Benin' },
+                    { 'value': 'BM', 'label': 'Bermuda' },
+                    { 'value': 'BT', 'label': 'Bhutan' },
+                    { 'value': 'BO', 'label': 'Bolivia' },
+                    { 'value': 'BQ', 'label': 'Bonaire' },
+                    { 'value': 'BA', 'label': 'Bosnia and Herzegovina' },
+                    { 'value': 'BW', 'label': 'Botswana' },
+                    { 'value': 'BV', 'label': 'Bouvet Island' },
+                    { 'value': 'BR', 'label': 'Brazil' },
+                    { 'value': 'IO', 'label': 'British Indian Ocean Territory' },
+                    { 'value': 'VG', 'label': 'British Virgin Islands' },
+                    { 'value': 'BN', 'label': 'Brunei' },
+                    { 'value': 'BG', 'label': 'Bulgaria' },
+                    { 'value': 'BF', 'label': 'Burkina Faso' },
+                    { 'value': 'BI', 'label': 'Burundi' },
+                    { 'value': 'KH', 'label': 'Cambodia' },
+                    { 'value': 'CM', 'label': 'Cameroon' },
+                    { 'value': 'CA', 'label': 'Canada' },
+                    { 'value': 'CV', 'label': 'Cape Verde' },
+                    { 'value': 'KY', 'label': 'Cayman Islands' },
+                    { 'value': 'CF', 'label': 'Central African Republic' },
+                    { 'value': 'TD', 'label': 'Chad' },
+                    { 'value': 'CL', 'label': 'Chile' },
+                    { 'value': 'CN', 'label': 'China' },
+                    { 'value': 'CX', 'label': 'Christmas Island' },
+                    { 'value': 'CC', 'label': 'Cocos [Keeling] Islands' },
+                    { 'value': 'CO', 'label': 'Colombia' },
+                    { 'value': 'KM', 'label': 'Comoros' },
+                    { 'value': 'CD', 'label': 'Congo' },
+                    { 'value': 'CK', 'label': 'Cook Islands' },
+                    { 'value': 'CR', 'label': 'Costa Rica' },
+                    { 'value': 'HR', 'label': 'Croatia' },
+                    { 'value': 'CU', 'label': 'Cuba' },
+                    { 'value': 'CW', 'label': 'Curacao' },
+                    { 'value': 'CY', 'label': 'Cyprus' },
+                    { 'value': 'CZ', 'label': 'Czechia' },
+                    { 'value': 'DK', 'label': 'Denmark' },
+                    { 'value': 'DJ', 'label': 'Djibouti' },
+                    { 'value': 'DM', 'label': 'Dominica' },
+                    { 'value': 'DO', 'label': 'Dominican Republic' },
+                    { 'value': 'TL', 'label': 'East Timor' },
+                    { 'value': 'EC', 'label': 'Ecuador' },
+                    { 'value': 'EG', 'label': 'Egypt' },
+                    { 'value': 'SV', 'label': 'El Salvador' },
+                    { 'value': 'GQ', 'label': 'Equatorial Guinea' },
+                    { 'value': 'ER', 'label': 'Eritrea' },
+                    { 'value': 'EE', 'label': 'Estonia' },
+                    { 'value': 'ET', 'label': 'Ethiopia' },
+                    { 'value': 'FK', 'label': 'Falkland Islands' },
+                    { 'value': 'FO', 'label': 'Faroe Islands' },
+                    { 'value': 'FJ', 'label': 'Fiji' },
+                    { 'value': 'FI', 'label': 'Finland' },
+                    { 'value': 'FR', 'label': 'France' },
+                    { 'value': 'GF', 'label': 'French Guiana' },
+                    { 'value': 'PF', 'label': 'French Polynesia' },
+                    { 'value': 'TF', 'label': 'French Southern Territories' },
+                    { 'value': 'GA', 'label': 'Gabon' },
+                    { 'value': 'GM', 'label': 'Gambia' },
+                    { 'value': 'GE', 'label': 'Georgia' },
+                    { 'value': 'DE', 'label': 'Germany' },
+                    { 'value': 'GH', 'label': 'Ghana' },
+                    { 'value': 'GI', 'label': 'Gibraltar' },
+                    { 'value': 'GR', 'label': 'Greece' },
+                    { 'value': 'GL', 'label': 'Greenland' },
+                    { 'value': 'GD', 'label': 'Grenada' },
+                    { 'value': 'GP', 'label': 'Guadeloupe' },
+                    { 'value': 'GU', 'label': 'Guam' },
+                    { 'value': 'GT', 'label': 'Guatemala' },
+                    { 'value': 'GG', 'label': 'Guernsey' },
+                    { 'value': 'GN', 'label': 'Guinea' },
+                    { 'value': 'GW', 'label': 'Guinea-Bissau' },
+                    { 'value': 'GY', 'label': 'Guyana' },
+                    { 'value': 'HT', 'label': 'Haiti' },
+                    { 'value': 'HM', 'label': 'Heard Island and McDonald Islands' },
+                    { 'value': 'HN', 'label': 'Honduras' },
+                    { 'value': 'HK', 'label': 'Hong Kong' },
+                    { 'value': 'HU', 'label': 'Hungary' },
+                    { 'value': 'IS', 'label': 'Iceland' },
+                    { 'value': 'IN', 'label': 'India' },
+                    { 'value': 'ID', 'label': 'Indonesia' },
+                    { 'value': 'IR', 'label': 'Iran' },
+                    { 'value': 'IQ', 'label': 'Iraq' },
+                    { 'value': 'IE', 'label': 'Ireland' },
+                    { 'value': 'IM', 'label': 'Isle of Man' },
+                    { 'value': 'IL', 'label': 'Israel' },
+                    { 'value': 'IT', 'label': 'Italy' },
+                    { 'value': 'CI', 'label': 'Ivory Coast' },
+                    { 'value': 'JM', 'label': 'Jamaica' },
+                    { 'value': 'JP', 'label': 'Japan' },
+                    { 'value': 'JE', 'label': 'Jersey' },
+                    { 'value': 'JO', 'label': 'Jordan' },
+                    { 'value': 'KZ', 'label': 'Kazakhstan' },
+                    { 'value': 'KE', 'label': 'Kenya' },
+                    { 'value': 'KI', 'label': 'Kiribati' },
+                    { 'value': 'XK', 'label': 'Kosovo' },
+                    { 'value': 'KW', 'label': 'Kuwait' },
+                    { 'value': 'KG', 'label': 'Kyrgyzstan' },
+                    { 'value': 'LA', 'label': 'Laos' },
+                    { 'value': 'LV', 'label': 'Latvia' },
+                    { 'value': 'LB', 'label': 'Lebanon' },
+                    { 'value': 'LS', 'label': 'Lesotho' },
+                    { 'value': 'LR', 'label': 'Liberia' },
+                    { 'value': 'LY', 'label': 'Libya' },
+                    { 'value': 'LI', 'label': 'Liechtenstein' },
+                    { 'value': 'LT', 'label': 'Lithuania' },
+                    { 'value': 'LU', 'label': 'Luxembourg' },
+                    { 'value': 'MO', 'label': 'Macao' },
+                    { 'value': 'MK', 'label': 'Macedonia' },
+                    { 'value': 'MG', 'label': 'Madagascar' },
+                    { 'value': 'MW', 'label': 'Malawi' },
+                    { 'value': 'MY', 'label': 'Malaysia' },
+                    { 'value': 'MV', 'label': 'Maldives' },
+                    { 'value': 'ML', 'label': 'Mali' },
+                    { 'value': 'MT', 'label': 'Malta' },
+                    { 'value': 'MH', 'label': 'Marshall Islands' },
+                    { 'value': 'MQ', 'label': 'Martinique' },
+                    { 'value': 'MR', 'label': 'Mauritania' },
+                    { 'value': 'MU', 'label': 'Mauritius' },
+                    { 'value': 'YT', 'label': 'Mayotte' },
+                    { 'value': 'MX', 'label': 'Mexico' },
+                    { 'value': 'FM', 'label': 'Micronesia' },
+                    { 'value': 'MD', 'label': 'Moldova' },
+                    { 'value': 'MC', 'label': 'Monaco' },
+                    { 'value': 'MN', 'label': 'Mongolia' },
+                    { 'value': 'ME', 'label': 'Montenegro' },
+                    { 'value': 'MS', 'label': 'Montserrat' },
+                    { 'value': 'MA', 'label': 'Morocco' },
+                    { 'value': 'MZ', 'label': 'Mozambique' },
+                    { 'value': 'MM', 'label': 'Myanmar [Burma]' },
+                    { 'value': 'NA', 'label': 'Namibia' },
+                    { 'value': 'NR', 'label': 'Nauru' },
+                    { 'value': 'NP', 'label': 'Nepal' },
+                    { 'value': 'NL', 'label': 'Netherlands' },
+                    { 'value': 'NC', 'label': 'New Caledonia' },
+                    { 'value': 'NZ', 'label': 'New Zealand' },
+                    { 'value': 'NI', 'label': 'Nicaragua' },
+                    { 'value': 'NE', 'label': 'Niger' },
+                    { 'value': 'NG', 'label': 'Nigeria' },
+                    { 'value': 'NU', 'label': 'Niue' },
+                    { 'value': 'NF', 'label': 'Norfolk Island' },
+                    { 'value': 'KP', 'label': 'North Korea' },
+                    { 'value': 'MP', 'label': 'Northern Mariana Islands' },
+                    { 'value': 'NO', 'label': 'Norway' },
+                    { 'value': 'OM', 'label': 'Oman' },
+                    { 'value': 'PK', 'label': 'Pakistan' },
+                    { 'value': 'PW', 'label': 'Palau' },
+                    { 'value': 'PS', 'label': 'Palestine' },
+                    { 'value': 'PA', 'label': 'Panama' },
+                    { 'value': 'PG', 'label': 'Papua New Guinea' },
+                    { 'value': 'PY', 'label': 'Paraguay' },
+                    { 'value': 'PE', 'label': 'Peru' },
+                    { 'value': 'PH', 'label': 'Philippines' },
+                    { 'value': 'PN', 'label': 'Pitcairn Islands' },
+                    { 'value': 'PL', 'label': 'Poland' },
+                    { 'value': 'PT', 'label': 'Portugal' },
+                    { 'value': 'PR', 'label': 'Puerto Rico' },
+                    { 'value': 'QA', 'label': 'Qatar' },
+                    { 'value': 'CG', 'label': 'Republic of the Congo' },
+                    { 'value': 'RO', 'label': 'Romania' },
+                    { 'value': 'RU', 'label': 'Russia' },
+                    { 'value': 'RW', 'label': 'Rwanda' },
+                    { 'value': 'RE', 'label': 'Réunion' },
+                    { 'value': 'BL', 'label': 'Saint Barthélemy' },
+                    { 'value': 'SH', 'label': 'Saint Helena' },
+                    { 'value': 'KN', 'label': 'Saint Kitts and Nevis' },
+                    { 'value': 'LC', 'label': 'Saint Lucia' },
+                    { 'value': 'MF', 'label': 'Saint Martin' },
+                    { 'value': 'PM', 'label': 'Saint Pierre and Miquelon' },
+                    { 'value': 'VC', 'label': 'Saint Vincent and the Grenadines' },
+                    { 'value': 'WS', 'label': 'Samoa' },
+                    { 'value': 'SM', 'label': 'San Marino' },
+                    { 'value': 'SA', 'label': 'Saudi Arabia' },
+                    { 'value': 'SN', 'label': 'Senegal' },
+                    { 'value': 'RS', 'label': 'Serbia' },
+                    { 'value': 'SC', 'label': 'Seychelles' },
+                    { 'value': 'SL', 'label': 'Sierra Leone' },
+                    { 'value': 'SG', 'label': 'Singapore' },
+                    { 'value': 'SX', 'label': 'Sint Maarten' },
+                    { 'value': 'SK', 'label': 'Slovakia' },
+                    { 'value': 'SI', 'label': 'Slovenia' },
+                    { 'value': 'SB', 'label': 'Solomon Islands' },
+                    { 'value': 'SO', 'label': 'Somalia' },
+                    { 'value': 'ZA', 'label': 'South Africa' },
+                    { 'value': 'GS', 'label': 'South Georgia and the South Sandwich Islands' },
+                    { 'value': 'KR', 'label': 'South Korea' },
+                    { 'value': 'SS', 'label': 'South Sudan' },
+                    { 'value': 'ES', 'label': 'Spain' },
+                    { 'value': 'LK', 'label': 'Sri Lanka' },
+                    { 'value': 'SD', 'label': 'Sudan' },
+                    { 'value': 'SR', 'label': 'Suriname' },
+                    { 'value': 'SJ', 'label': 'Svalbard and Jan Mayen' },
+                    { 'value': 'SZ', 'label': 'Swaziland' },
+                    { 'value': 'SE', 'label': 'Sweden' },
+                    { 'value': 'CH', 'label': 'Switzerland' },
+                    { 'value': 'SY', 'label': 'Syria' },
+                    { 'value': 'ST', 'label': 'São Tomé and Príncipe' },
+                    { 'value': 'TW', 'label': 'Taiwan' },
+                    { 'value': 'TJ', 'label': 'Tajikistan' },
+                    { 'value': 'TZ', 'label': 'Tanzania' },
+                    { 'value': 'TH', 'label': 'Thailand' },
+                    { 'value': 'TG', 'label': 'Togo' },
+                    { 'value': 'TK', 'label': 'Tokelau' },
+                    { 'value': 'TO', 'label': 'Tonga' },
+                    { 'value': 'TT', 'label': 'Trinidad and Tobago' },
+                    { 'value': 'TN', 'label': 'Tunisia' },
+                    { 'value': 'TR', 'label': 'Turkey' },
+                    { 'value': 'TM', 'label': 'Turkmenistan' },
+                    { 'value': 'TC', 'label': 'Turks and Caicos Islands' },
+                    { 'value': 'TV', 'label': 'Tuvalu' },
+                    { 'value': 'UM', 'label': 'U.S. Minor Outlying Islands' },
+                    { 'value': 'VI', 'label': 'U.S. Virgin Islands' },
+                    { 'value': 'UG', 'label': 'Uganda' },
+                    { 'value': 'UA', 'label': 'Ukraine' },
+                    { 'value': 'AE', 'label': 'United Arab Emirates' },
+                    { 'value': 'GB', 'label': 'United Kingdom' },
+                    { 'value': 'US', 'label': 'United States' },
+                    { 'value': 'UY', 'label': 'Uruguay' },
+                    { 'value': 'UZ', 'label': 'Uzbekistan' },
+                    { 'value': 'VU', 'label': 'Vanuatu' },
+                    { 'value': 'VA', 'label': 'Vatican City' },
+                    { 'value': 'VE', 'label': 'Venezuela' },
+                    { 'value': 'VN', 'label': 'Vietnam' },
+                    { 'value': 'WF', 'label': 'Wallis and Futuna' },
+                    { 'value': 'EH', 'label': 'Western Sahara' },
+                    { 'value': 'YE', 'label': 'Yemen' },
+                    { 'value': 'ZM', 'label': 'Zambia' },
+                    { 'value': 'ZW', 'label': 'Zimbabwe' },
+                    { 'value': 'AX', 'label': 'Åland' }
+                ]
+            });
+
+            $('#remote').suggest({
+                limit: 6,
+                suggestions_menu_width: '350px',
+                source: function (query, limit) {
+                    var self = this;
+                    $.getJSON(
+                        'http://suggestqueries.google.com/complete/search?callback=?',
+                        {
+                            hl:     'en',
+                            ds:     'yt',
+                            q:      query,
+                            client: 'youtube'
+                        },
+                        function (data) {
+                            data = $.map(data[1], function (result, index) {
+                                return result[0];
+                            });
+                            self.suggest(data.slice(0, limit));
+                        }
+                    );
+                }
+            });
+
+        });
+        </script>
+
+    </body>
+</html>
