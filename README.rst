@@ -50,7 +50,7 @@ Options can be passed via data attributes or JavaScript. Data attributes have a 
 
 - ``limit`` (``int``): the maximum number of results to display (default: ``8``).
 - ``min_query_length`` (``int``): the minimum character length needed before a search is performed (default: ``1``).
-- ``source`` (``array``, ``array of objects with label/value properties`` or ``function``): the data source to query against (default: ``[]``).
+- ``source`` (``array``, ``array`` of ``objects`` with ``label/value properties`` or ``function``): the data source to query against (default: ``[]``).
 - ``suggestions_menu_markup`` (``str``): the full HTML markup of the suggestions menu (default: ``<ul class="suggest"></ul>``).
 - ``suggestions_menu_width`` (``str``): the CSS width of the suggestions menu (default: ``width`` of the related ``input``).
 - ``suggestion_markup`` (``str``): the full HTML markup of a suggestion (default: ``<li><a href="#"></a></li>``).
@@ -100,8 +100,8 @@ Connect any data source via the ``source function``:
             $.get(
                 self.input.data('ajax-url'),
                 {
-                    'query': query,
-                    'limit': limit
+                    query: query,
+                    limit: limit
                 },
                 function (data) {
                     // Do somethig with the data.
@@ -191,7 +191,7 @@ The function called when a suggestion is selected by the user.
 How to extend ``$.suggest()``
 -----------------------------
 
-.. code-block::
+.. code-block:: javascript
 
     (function ($, window, document, undefined) {
 

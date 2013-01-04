@@ -32,8 +32,8 @@
         </form>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="../jquery.suggest.js"></script>
         <script>
-        document.write('<script src="../jquery.suggest.js"><\/script>');
         window.jQuery(function ($) {
             "use strict";
 
@@ -384,10 +384,10 @@
                     $.getJSON(
                         'http://suggestqueries.google.com/complete/search?callback=?',
                         {
-                            'hl':       'en',
-                            'ds':       'yt',
-                            'q':        query,
-                            'client':   'youtube'
+                            hl:     'en',
+                            ds:     'yt',
+                            q:      query,
+                            client: 'youtube'
                         },
                         function (data) {
                             data = $.map(data[1], function (result, index) {
