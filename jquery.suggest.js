@@ -23,6 +23,7 @@
      * Options:
      *    Options can be passed via data attributes or JavaScript. Data attributes have a higher precedence.
      *    Default options:
+     *        auto_focus: bool, if set to true the first suggestion will automatically be focused.
      *        limit: int, the maximum number of results to display.
      *        min_query_length: int, the minimum character length needed before a search is performed.
      *        source: array, array of objects with label/value properties or function, the data source to query against.
@@ -74,7 +75,8 @@
     var pluginName = 'suggest';
 
     var defaults = {
-          limit:                    8
+          auto_focus:               false
+        , limit:                    8
         , min_query_length:         1
         , source:                   []
         , suggestions_menu_markup:  '<ul class="suggest"></ul>'
@@ -325,6 +327,9 @@
             if (html.length) {
                 this.setSuggestionsMenuPosition();
                 this.suggestions_menu.html(html).show();
+                if (self.options.auto_focus) {
+                    self.next();
+                }
             }
             this.in_process = false;
             this.throbber.hide();

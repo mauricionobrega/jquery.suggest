@@ -48,6 +48,7 @@ Available options
 
 Options can be passed via data attributes or JavaScript. Data attributes have a higher precedence.
 
+- ``auto_focus`` (``bool``): if set to ``true`` the first suggestion will automatically be focused (default: ``false``).
 - ``limit`` (``int``): the maximum number of results to display (default: ``8``).
 - ``min_query_length`` (``int``): the minimum character length needed before a search is performed (default: ``1``).
 - ``source`` (``array``, ``array`` of ``objects`` with ``label/value properties`` or ``function``): the data source to query against (default: ``[]``).
@@ -115,7 +116,9 @@ Connect any data source via the ``source function``:
 Throbber
 --------
 
-A throbber is a graphic that animates to show the user that the program is performing an action. You can use a `CSS3 animation <http://dribbble.com/shots/631496-Spinspinspin-CSS>`_ or an animated graphic if you need to support certain older browser versions.
+The throbber style must be defined with CSS, otherwise it will not be visible. A throbber is a graphic that animates to show the user that the program is performing an action. You can use a `CSS3 animation <http://dribbble.com/shots/631496-Spinspinspin-CSS>`_ or an animated graphic if you need to support certain older browser versions.
+
+Example of a pure CSS animated throbber:
 
 .. code-block::
 
