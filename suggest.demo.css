@@ -2,8 +2,12 @@ body {
     background: #E5E5E5;
     font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
     color: #333;
-    margin: 0 100px 100px 100px;
     overflow-y: scroll;
+}
+
+div#content {
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 h1, form {
