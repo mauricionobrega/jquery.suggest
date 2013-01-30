@@ -164,14 +164,13 @@
 
         , listen: function () {
             this.input
-                .on('keyup',    $.proxy(this.keyup, this))
-                .on('keypress', $.proxy(this.keypress, this))
-                .on('keydown',  $.proxy(this.keypress, this))
-                .on('blur',     $.proxy(this.blur, this));
+                .on('keyup',            $.proxy(this.keyup, this))
+                .on('keypress keydown', $.proxy(this.keypress, this))
+                .on('blur',             $.proxy(this.blur, this));
             this.suggestions_menu
-                .on('click',        'li', $.proxy(this.click, this))
-                .on('mouseenter',   'li', $.proxy(this.mouseenter, this))
-                .on('mouseleave',   'li', $.proxy(this.mouseleave, this));
+                .on('click',                'li', $.proxy(this.click, this))
+                .on('mouseenter mouseover', 'li', $.proxy(this.mouseenter, this))
+                .on('mouseout mouseleave',  'li', $.proxy(this.mouseleave, this));
         }
 
         , blur: function (e) {
@@ -250,24 +249,28 @@
         }
 
         , next: function () {
-            if (this.suggestions_menu.find('li.active').next().length) {
-                this.suggestions_menu.find('li.active').removeClass('active').next().addClass('active');
+            var active_item = this.suggestions_menu.find('li.active');
+            active_item.removeClass('active');
+            if (active_item.next().length) {
+                active_item.next().addClass('active');
             } else {
                 this.suggestions_menu.find('li').removeClass('active').first().addClass('active');
             }
         }
 
         , prev: function () {
-            if (this.suggestions_menu.find('li.active').prev().length) {
-                this.suggestions_menu.find('li.active').removeClass('active').prev().addClass('active');
+            var active_item = this.suggestions_menu.find('li.active');
+            active_item.removeClass('active');
+            if (active_item.prev().length) {
+                active_item.prev().addClass('active');
             } else {
                 this.suggestions_menu.find('li').removeClass('active').last().addClass('active');
             }
         }
 
         , onSuggestionSelected: function (e) {
-            if (this.suggestions_menu.find('li.active').length) {
-                var active_item = this.suggestions_menu.find('li.active');
+            var active_item = this.suggestions_menu.find('li.active');
+            if (active_item.length) {
                 if (active_item.data('value')) {
                     this.input.val(active_item.data('value'));
                 } else {
