@@ -250,21 +250,21 @@
 
         , next: function () {
             var active_item = this.suggestions_menu.find('li.active');
-            active_item.removeClass('active');
+            this.suggestions_menu.find('li').removeClass('active');
             if (active_item.next().length) {
                 active_item.next().addClass('active');
             } else {
-                this.suggestions_menu.find('li').removeClass('active').first().addClass('active');
+                this.suggestions_menu.find('li').first().addClass('active');
             }
         }
 
         , prev: function () {
             var active_item = this.suggestions_menu.find('li.active');
-            active_item.removeClass('active');
+            this.suggestions_menu.find('li').removeClass('active');
             if (active_item.prev().length) {
                 active_item.prev().addClass('active');
             } else {
-                this.suggestions_menu.find('li').removeClass('active').last().addClass('active');
+                this.suggestions_menu.find('li').last().addClass('active');
             }
         }
 
